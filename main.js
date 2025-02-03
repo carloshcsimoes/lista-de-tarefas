@@ -1,23 +1,14 @@
 $(document).ready(function() {
-   
-    $('#cadastrar').click(function() {
-        const tarefa = $('#tarefa').val().trim();
-        if (tarefa) {
-            $('#lista-tarefas').append(
-                `<li>${tarefa} <button class="remove">X</button></li>`
-            );
-            $('#tarefa').val(''); 
-        } else {
-            alert('Por favor, insira o nome da tarefa!');
+    $('#taskForm').submit(function(event) {
+        event.preventDefault();
+        var taskText = $('#taskInput').val().trim();
+        if (taskText !== "") {
+            $('#taskList').append('<li>' + taskText + '</li>');
+            $('#taskInput').val("");
         }
     });
 
-   
-    $(document).on('click', '.remove', function() {
-        $(this).parent().remove();
-    });
-
-    $(document).on('click', '.tarefa-texto', function() {
-        $(this).toggleClass('completed');
+    $('#taskList').on('click', 'li', function() {
+        $(this).toggleClass('done');
     });
 });

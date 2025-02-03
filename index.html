@@ -10,12 +10,12 @@
 <body>
     <div class="container">
         <h1>Lista de tarefas</h1>
-        <div class="form">
-            <input type="text" id="tarefa" placeholder="Nome da tarefa">
-            <button id="cadastrar">Cadastrar</button>
-        </div>
-        <ul id="lista-tarefas"></ul>
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Nome da tarefa" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <ul id="taskList"></ul>
     </div>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>
